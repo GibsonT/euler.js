@@ -28,6 +28,3 @@ function largestPrime(limit) {
   // Never found a prime previously? Then the limit is the prime!
   return foundPrime ? prime : limit;
 }
-
-const answer = largestPrime(prompt('Enter a number to find the largest prime factor:'));
-alert(`The largest prime factor is ${answer}`);

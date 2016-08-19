@@ -18,6 +18,3 @@ function fibo(limit) {
 
   return result;
 }
-
-const result = fibo(prompt('Find the sum of even Fibonacci terms below what limit?'));
-alert(`The result is ${result}`);
