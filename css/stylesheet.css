@@ -1,0 +1,38 @@
+* {
+  color: #88D9E6;
+}
+
+h1, p {
+  font-family: sans-serif;
+}
+
+body {
+  background-color: #526760;
+}
+
+section {
+  background-color: #374B4A;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 1.25em;
+  color: #8B8BAE;
+  margin: 0.25em;
+}
+
+p {
+  font-size: 1em;
+}
+
+section {
+  display: block;
+  float: left;
+  width: 30%;
+  height: 15em;
+  border: 0.025em solid #C5FFFD;
+}
+
+section > h1 {
+  text-align: center;
+}
