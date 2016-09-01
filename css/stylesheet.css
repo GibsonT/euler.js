@@ -18,8 +18,17 @@ body {
   background-color: #526760;
 }
 
-section {
+section, header {
   background-color: #374B4A;
+}
+
+header {
+  display: block;
+  height: 5em;
+  width: 100%;
+  padding-top: 1.5em;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
 }
 
 h1 {
@@ -29,6 +38,16 @@ h1 {
   margin: 0.25em;
   margin-top: 0;
   text-align: center;
+}
+
+header > h1 {
+  font-size: 1.75em;
+  text-align: left;
+  float: left;
+}
+
+header > a {
+  float: right;
 }
 
 h2 {
@@ -44,14 +63,21 @@ p {
   font-weight: bold;
 }
 
+body > div {
+  margin-top: 0.6em;
+  margin-left: 0.6em;
+}
+
 section {
   display: block;
   position: relative;
   float: left;
-  width: 33%;
+  width: 32.75%;
   height: 20em;
   border: 0.025em solid #C5FFFD;
   padding: 0.5em;
+  margin-left: 0.15em;
+  margin-right: 0.15em;
 }
 
 section > div {
@@ -83,4 +109,10 @@ input {
 .resultdiv {
   float: right;
   margin-left: 50%
+}
+
+#githubIcon {
+  width: 3em;
+  height: 3em;
+  margin-top: -0.5em;
 }
