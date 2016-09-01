@@ -1,4 +1,4 @@
-/* global prompt alert */
+/* global prompt alert document */
 
 function fibo(limit) {
   let term1 = 1;
@@ -16,5 +16,5 @@ function fibo(limit) {
     term2 = tempTerm;
   }
 
-  return result;
+  document.getElementById('prob2result').innerHTML = result;
 }

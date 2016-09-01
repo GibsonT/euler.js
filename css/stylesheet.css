@@ -2,8 +2,16 @@
   color: #88D9E6;
 }
 
-h1, p {
+h1, h2, p {
   font-family: sans-serif;
+}
+
+input, button {
+  display: block;
+  margin: auto;
+  color: #374B4A;
+  border-radius: 0.25em;
+  border-style: solid;
 }
 
 body {
@@ -19,20 +27,60 @@ h1 {
   font-size: 1.25em;
   color: #8B8BAE;
   margin: 0.25em;
+  margin-top: 0;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin-top: 0.65em;
+  text-align: center;
+  font-weight: bolder;
 }
 
 p {
   font-size: 1em;
+  margin: 1em 0 1em 0;
+  font-weight: bold;
 }
 
 section {
   display: block;
+  position: relative;
   float: left;
-  width: 30%;
-  height: 15em;
+  width: 33%;
+  height: 20em;
   border: 0.025em solid #C5FFFD;
+  padding: 0.5em;
 }
 
-section > h1 {
+section > div {
+  position: absolute;
+  bottom: 0;
+  height: 10em;
+  width: 50%;
+  padding-top: 0.5em;
+}
+
+input {
   text-align: center;
+  width: 9em;
+  margin-top: 1em;
+}
+
+.resultsblock {
+  float: right;
+  text-align: center;
+  font-weight: bold;
+}
+
+.inputdiv {
+  float: left;
+  margin-left: -0.5em;
+
+}
+
+.resultdiv {
+  float: right;
+  margin-left: 50%
 }

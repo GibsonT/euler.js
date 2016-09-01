@@ -1,30 +1,44 @@
-/* global alert prompt */
+/* global alert prompt document */
 
-function largestPrime(limit) {
-  let prime = 0;
-  let foundPrime = false;
+function isPrime(num) {
+  if (num % 2 === 0 && num !== 2) {
+    return false;
+  }
 
-  // We're starting at the sqrt to massively cut down on possibilities
-  for (let i = Math.ceil(Math.sqrt(limit)); i > 1; i--) {
-    while (limit % i !== 0) {
-      i--;
-    }
-
-    for (let j = 2; j < i; j++) {
-      if (i % j === 0) {
-        break;
-      } else if (j === i - 1) {
-        foundPrime = true;
-        prime = i;
-        break;
-      }
-    }
-
-    if (foundPrime) {
-      break;
+  for (let j = 3; j <= Math.ceil(Math.sqrt(num)); j += 1) {
+    if (num % j === 0) {
+      return false;
     }
   }
 
-  // Never found a prime previously? Then the limit is the prime!
-  return foundPrime ? prime : limit;
+  return true;
+}
+
+function checkFactors(factor) {
+  const primes = [];
+
+  for (let i = 2; i <= Math.ceil(Math.sqrt(factor)); i++) {
+    while (factor % i !== 0 && i <= Math.ceil(Math.sqrt(factor))) {
+      i++;
+    }
+
+    if (i >= Math.ceil(Math.sqrt(factor))) {
+      break;
+    }
+
+    console.log(`Checking ${i} and ${factor / i}`);
+    if (isPrime(factor / i)) {
+      return factor / i;
+    }
+    if (isPrime(i)) {
+      console.log(`Push ${i}`);
+      primes.push(i);
+    }
+  }
+  primes.sort((a, b) => (b - a));
+  return primes.length > 0 ? primes[0] : factor;
+}
+
+function largestPrime(limit) {
+  document.getElementById('prob3result').innerHTML = checkFactors(limit);
 }
