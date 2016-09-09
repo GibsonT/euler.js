@@ -16,7 +16,9 @@ function isPrime(num) {
 
 function checkFactors(factor) {
   const primes = [];
-
+  
+  // We're using the square root of the number (rounded up) to reduce the number of values to check, which
+  // speeds up the runtime of the function significantly. This is based on the Sieve of Eratosthenes algorithm.
   for (let i = 2; i <= Math.ceil(Math.sqrt(factor)); i++) {
     while (factor % i !== 0 && i <= Math.ceil(Math.sqrt(factor))) {
       i++;
@@ -25,17 +27,24 @@ function checkFactors(factor) {
     if (i >= Math.ceil(Math.sqrt(factor))) {
       break;
     }
-
-    console.log(`Checking ${i} and ${factor / i}`);
+    
+    // We're starting from the bottom up, so if factor / i is prime, then, logically, factor / i is the
+    // greatest prime factor.
     if (isPrime(factor / i)) {
       return factor / i;
     }
+    
+    // Otherwise, we push i into the primes array and continue.
     if (isPrime(i)) {
-      console.log(`Push ${i}`);
       primes.push(i);
     }
   }
+  
+  // Sort primes into descending order by value.
   primes.sort((a, b) => (b - a));
+  
+  // If primes has at least one value, then the first value is the greatest prime factor.
+  // Otherwise, the limit given itself is prime!
   return primes.length > 0 ? primes[0] : factor;
 }
 
